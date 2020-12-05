@@ -68,6 +68,13 @@ echo "Opening in VS Code..."
 code "./$DD/$DD.txt"
 code "./$DD/02.py"
 code "./$DD/01.py"
+echo ""
+
+number_no_leading=$(echo $DD | sed 's/^0*//')
+echo "Opening today's challenge in browser...."
+echo "https://adventofcode.com/2020/day/$number_no_leading"
+open "https://adventofcode.com/2020/day/$number_no_leading"
+echo ""
 
 echo "Done!"
 echo ""
