@@ -23,6 +23,7 @@ echo ""
 
 echo "Generating Python boilerplate files"
 
+nl=$'\\\\n'
 read -r -d '' boilerplate <<-EOF
 #! /usr/bin/env python3
 import re
@@ -33,7 +34,7 @@ data = ""
 with open('$DD.txt', 'r') as file:
     data = file.read().strip()
 
-rows = [row.strip() for row in data.split('\n')]
+rows = [row.strip() for row in data.split('$nl')]
 
 # ==== SOLUTION ====
 total = 0
