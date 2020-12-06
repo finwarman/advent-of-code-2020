@@ -32,7 +32,7 @@ import math
 # ==== INPUT ====
 data = ""
 with open('$DD.txt', 'r') as file:
-    data = file.read().strip()
+    data = file.read()
 
 rows = [row.strip() for row in data.split('$nl')]
 
