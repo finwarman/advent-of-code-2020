@@ -14,3 +14,6 @@ for i in range(len(nums)-1, -1, -1):
             quit()
         if x > 2020:
             continue
+
+# N.B. Can be done in O(n) by adding to a set and simply checking if 2020-n exists in that set,
+#    while adding from the input file
