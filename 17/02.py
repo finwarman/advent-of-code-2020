@@ -33,8 +33,10 @@ for y in range(WIDTH):
 
 for i in range(6):
     new_active = deepcopy(active)
+    checked = set()
 
     for cube in active:
+        checked.add(cube)
         neighbours = get_neighbours(*cube)
 
         active_neighbours = [n for n in neighbours if n in active]
@@ -44,7 +46,7 @@ for i in range(6):
             new_active.remove(cube)
 
         for neigh in neighbours:
-            if neigh not in active_neighbours:
+            if neigh not in active_neighbours and neigh not in checked:
 
                 curr_neighbours = get_neighbours(*neigh)
                 curr_active_count = 0
@@ -54,6 +56,8 @@ for i in range(6):
 
                 if curr_active_count == 3:
                     new_active.add(neigh)
+
+            checked.add(neigh)
 
     active = new_active
 
