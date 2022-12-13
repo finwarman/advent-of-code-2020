@@ -47,6 +47,7 @@ for i in range(6):
 
         for neigh in neighbours:
             if neigh not in active_neighbours and neigh not in checked:
+                checked.add(neigh)
 
                 curr_neighbours = get_neighbours(*neigh)
                 curr_active_count = 0
@@ -57,7 +58,6 @@ for i in range(6):
                 if curr_active_count == 3:
                     new_active.add(neigh)
 
-            checked.add(neigh)
 
     active = new_active
 
